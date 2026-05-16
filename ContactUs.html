@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Central Hospital - Contact Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f4f7f9; /* Added a light background for contrast */
+        }
+        .div1 {
+            background-color: rgb(255, 255, 255);
+            width: 450px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        .head {
+            margin: 0;
+        }
+        .s1 {
+            color: rgb(0, 200, 255);
+        }
+        .div2 {
+            position: fixed;
+            left: 450px;
+            top: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgb(0, 200, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            overflow-x: auto;
+            z-index: 10;
+        }
+        .div2 button {
+            border: 0;
+            background-color: inherit;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 20px;
+        }
+        .div2 button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .cta-button {
+            background-color: white !important;
+            color: rgb(0, 200, 255) !important;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0 !important;
+        }
+        .div3 {
+            background-image: url("1.jpg");
+            position: relative;
+            top: 80px;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 100px;
+        }
+        .p4 { 
+            color: rgb(255, 255, 255);
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .p3 { 
+            color: rgb(255, 255, 255);
+            font-size: 1.5em;
+            width: 60%;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+        .b1 { 
+            border: 0;
+            background-color: rgb(0, 200, 255);
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 30px;
+            padding: 15px 35px;
+            align-self: flex-start;
+        }
+        .div6 { 
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .h12 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .contact-section {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        .contact-section h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgb(0, 200, 255);
+        }
+        .contact-section p {
+            margin-bottom: 15px;
+        }
+        .contact-section .emergency-notice {
+            background-color: #fff2f2;
+            border-left: 5px solid #d93025;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        .contact-section .emergency-notice strong {
+            color: #d93025;
+            font-size: 1.2em;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .contact-section strong {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="div1">
+            <h1 class="head">The Central <span class="s1">Hospital</span></h1>
+        </div>
+        <div class="div2">
+            <button type="button" onclick="location.href='Home.html'">Home</button>
+           <button type="button" onclick="location.href='FindADoctor.html'">Find a Doctor</button>
+           <button type="button" onclick="location.href='OurServices.html'">Our Services</button>
+           <button type="button" onclick="location.href='AboutUs.html'">About Us</button>
+           <button type="button" onclick="location.href='ContactUs.html'">Contact Us</button>
+           <button type="button" class="cta-button" onclick="location.href='BookAnAppointment.html'">Book an Appointment</button>
+        </div>
+    </header>
+    <main>
+        <div class="div3">
+            <h1 class="p4">Get in Touch with The Central Hospital</h1>
+            <p class="p3">
+                We are here to help and answer any questions you may have. Your health and well-being are our top priorities, and we look forward to connecting with you.
+            </p>
+            <button type="button" class="b1" onclick="location.href='SendUsAMessage.html'">Send Us a Message</button>
+        </div>
+
+        <div class="div6">
+            <h2 class="h12">Contact Information</h2>
+            
+            <div class="contact-section">
+
+                <div class="emergency-notice">
+                    <strong>Medical Emergency?</strong>
+                    <p style="margin: 0;">If you are experiencing a life-threatening medical emergency, please do not use this form. Call <strong>112</strong> or <strong>102</strong> for an ambulance immediately, or proceed to the nearest emergency room.</p>
+                </div>
+
+                <h3>General Contact</h3>
+                <p>For general inquiries, patient information, and operator assistance.</p>
+                <p><strong>Main Hospital Phone:</strong> +91 80 2500 5000</p>
+                <p><strong>Email:</strong> info@thecentralhospital.in <br><em>(For your privacy, please do not include personal health information in emails.)</em></p>
+                <p>
+                    <strong>Address:</strong><br>
+                    The Central Hospital<br>
+                    12, Wellness Avenue, Healthcare District<br>
+                    Metropolis City, Karnataka - 560001
+                </p>
+
+                <h3>Appointments and Referrals</h3>
+                <p>Ready to schedule your visit? Our team is ready to assist you in finding the right doctor and time for your needs.</p>
+                <p><strong>Appointment Scheduling Line:</strong> +91 80 2500 6000</p>
+                <p><strong>Online Booking:</strong> You can also Book an Appointment Online at your convenience.</p>
+
+            </div>
+        </div>
+        <footer>
+            <p>&copy; 2025 The Central <span class="s1">Hospital</span></p>
+        </footer>
+    </main>
+</body>
+</html>

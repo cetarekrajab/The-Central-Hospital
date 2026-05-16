@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Central Hospital - About Us</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        main {
+            padding-top: 80px;
+        }
+        .div1 {
+            background-color: rgb(255, 255, 255);
+            width: 450px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        .head {
+            margin: 0;
+        }
+        .s1 {
+            color: rgb(0, 200, 255);
+        }
+        .div2 {
+            position: fixed;
+            left: 450px;
+            top: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgb(0, 200, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            overflow-x: auto;
+            z-index: 10;
+        }
+        .div2 button {
+            border: 0;
+            background-color: inherit;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 20px;
+        }
+        .div2 button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .cta-button {
+            background-color: white !important;
+            color: rgb(0, 200, 255) !important;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0 !important;
+        }
+        .div3 {
+            background-image: url("1.jpg");
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 100px;
+        }
+        .p4 { 
+            color: rgb(255, 255, 255);
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .p3 { 
+            color: rgb(255, 255, 255);
+            font-size: 1.5em;
+            width: 60%;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+        .b1 { 
+            border: 0;
+            background-color: rgb(0, 200, 255);
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 30px;
+            padding: 15px 35px;
+            align-self: flex-start;
+        }
+        .div6 { 
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .h12 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px; 
+        }
+        .p11{
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.7;
+            max-width: 850px;
+            margin: 0 auto 60px auto; 
+            text-align: left;
+        }
+        .div4 { 
+            padding: 60px 20px;
+            background-color: #f4f7f9; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-radius: 20px; 
+        }
+        .div5 {
+            height: auto; 
+            min-height: 300px; 
+            width: 300px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 40px 20px; 
+        }
+        .div5-icon {
+            font-size: 3em;
+            color: rgb(0, 200, 255);
+        }
+        .div5 h3 { 
+            color: #333;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .div5 p { 
+             font-size: 1em;
+             color: #555;
+             line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="div1">
+            <h1 class="head">The Central <span class="s1">Hospital</span></h1>
+        </div>
+        <div class="div2">
+           <button type="button" onclick="location.href='Home.html'">Home</button>
+           <button type="button" onclick="location.href='FindADoctor.html'">Find a Doctor</button>
+           <button type="button" onclick="location.href='OurServices.html'">Our Services</button>
+           <button type="button" onclick="location.href='AboutUs.html'">About Us</button>
+           <button type="button" onclick="location.href='ContactUs.html'">Contact Us</button>
+           <button type="button" class="cta-button" onclick="location.href='BookAnAppointment.html'">Book an Appointment</button>
+        </div>
+    </header>
+    <main>
+        <div class="div3">
+            <h1 class="p4">Your Health. Our Promise.</h1>
+            <p class="p3">
+                Welcome to The Central Hospital, where your health and well-being are our highest priority. Our mission is to deliver outstanding medical care with compassion and respect for every patient we serve.
+            </p>
+            <button type="button" class="b1" onclick="location.href='OurServices.html'">Explore Our Services</button>
+        </div>
+        <div class="div6">
+            <h2 class="h12">A Legacy of Excellence, A Future of Innovation</h2>
+            <p class="p11">
+                Founded in 1985 by Dr. Arjun Verma, The Central Hospital has grown from a small community clinic into a leading multispecialty hospital. For decades, we have stood as a beacon of hope and healing, building a legacy of trust one patient at a time. At the heart of our hospital is our greatest asset: a dedicated family of over 2,000 medical professionals, from nationally-recognised physicians to highly skilled surgeons and compassionate nurses. By combining world-class medical innovation with unwavering compassion, we create a supportive environment where you and your loved ones feel valued, heard, and cared for.
+            </p>
+            <div class="div4">
+                <div class="div5">
+                    <div class="div5-icon">❤️</div>
+                    <h3>Compassion</h3>
+                    <p>We treat every patient and their family with the kindness, empathy, and respect they deserve.</p>
+                </div>
+                <div class="div5">
+                    <div class="div5-icon">🏆</div>
+                    <h3>Excellence</h3>
+                    <p>We are relentlessly committed to the highest standards of clinical quality and patient safety in everything we do.</p>
+                </div>
+                <div class="div5">
+                    <div class="div5-icon">🔬</div>
+                    <h3>Innovation</h3>
+                    <p>We embrace advanced technology and medical research to provide accurate diagnoses and effective treatments.</p>
+                </div>
+            </div>
+        </div> 
+    </main>
+    <footer>
+        <p>&copy; 2025 The Central <span class="s1">Hospital</span></p>
+    </footer>
+</body>
+</html>

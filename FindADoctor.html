@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Central Hospital - Find a Doctor</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        main {
+            padding-top: 80px;
+        }
+        .div1 {
+            background-color: rgb(255, 255, 255);
+            width: 450px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        .head {
+            margin: 0;
+        }
+        .s1 {
+            color: rgb(0, 200, 255);
+        }
+        .div2 {
+            position: fixed;
+            left: 450px;
+            top: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgb(0, 200, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            overflow-x: auto;
+            z-index: 10;
+        }
+        .div2 button {
+            border: 0;
+            background-color: inherit;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 20px;
+        }
+        .div2 button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .cta-button {
+            background-color: white !important;
+            color: rgb(0, 200, 255) !important;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0 !important;
+        }
+        .div3 {
+            background-image: url("1.jpg");
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 100px;
+        }
+        .p4 { 
+            color: rgb(255, 255, 255);
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .p3 { 
+            color: rgb(255, 255, 255);
+            font-size: 1.5em;
+            width: 60%;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+        .b1 { 
+            border: 0;
+            background-color: rgb(0, 200, 255);
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 30px;
+            padding: 15px 35px;
+            align-self: flex-start;
+        }
+        .div6 { 
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        #SearchBar {
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 20px;
+            border: 1px solid #ccc;
+            width: 300px;
+        }
+        .search-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            font-weight: bold;
+            border: 0;
+            background-color: rgb(0, 200, 255);
+            color: white;
+            border-radius: 20px;
+            cursor: pointer;
+            margin-left: 10px;
+            transition: background-color 0.2s;
+        }
+        .search-button:hover {
+            background-color: rgb(0, 180, 230);
+        }
+        .search-results {
+            margin-top: 40px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+        .doctor-card {
+            background-color: #f9f9f9;
+            border: 1px solid #eee;
+            border-radius: 10px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 250px;
+            padding: 20px;
+            text-align: left;
+            line-height: 1.5;
+        }
+        .doctor-card h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            color: rgb(0, 200, 255);
+        }
+        .doctor-card p {
+            margin-bottom: 5px;
+            color: #555;
+            font-size: 14px;
+        }
+        .doctor-card p:last-child {
+            margin-bottom: 0;
+        }
+        .doctor-card p strong {
+            color: #333;
+        }
+        .h12 {
+            font-size: 2.5em;
+            color: #333;
+            margin-bottom: 40px; 
+        }
+        .p11{
+            font-size: 1.2em;
+            color: #555;
+            line-height: 1.7;
+            max-width: 850px;
+            margin: 0 auto 60px auto; 
+            text-align: left;
+        }
+        .div4 { 
+            padding: 60px 20px;
+            background-color: #f4f7f9; 
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            border-radius: 20px; 
+        }
+        .div5 {
+            height: auto; 
+            min-height: 300px; 
+            width: 300px;
+            background-color: white;
+            border-radius: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            text-align: center;
+            padding: 40px 20px; 
+        }
+        .div5-icon {
+            font-size: 3em;
+            color: rgb(0, 200, 255);
+        }
+        .div5 h3 { 
+            color: #333;
+            font-size: 1.5em;
+            margin-top: 20px;
+            margin-bottom: 15px;
+        }
+        .div5 p { 
+             font-size: 1em;
+             color: #555;
+             line-height: 1.6;
+        }
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="div1">
+            <h1 class="head">The Central <span class="s1">Hospital</span></h1>
+        </div>
+        <div class="div2">
+           <button type="button" onclick="location.href='Home.html'">Home</button>
+           <button type="button" onclick="location.href='FindADoctor.html'">Find a Doctor</button>
+           <button type="button" onclick="location.href='OurServices.html'">Our Services</button>
+           <button type="button" onclick="location.href='AboutUs.html'">About Us</button>
+           <button type="button" onclick="location.href='ContactUs.html'">Contact Us</button>
+           <button type="button" class="cta-button" onclick="location.href='BookAnAppointment.html'">Book an Appointment</button>
+        </div>
+    </header>
+    <main>
+        <div class="div3">
+            <h1 class="p4">Find a Doctor</h1>
+            <p class="p3">
+                We're here to help you connect with the best medical Professionals.
+            </p>
+        </div>
+        <div class="div6">
+            <label for="none">Search By:</label>
+            <input type="radio" id="Name" name="searchby" value="Name" checked>
+            <label for="Name">Name</label>
+            <input type="radio" id="Department" name="searchby" value="Department">
+            <label for="Department">Department</label><br><br>
+            <input type="text" id="SearchBar" name="SearchBar">
+            <button type="button" id="SearchButton" class="search-button">Search</button>
+
+            <div id="SearchResults" class="search-results">
+            </div> 
+        </div> 
+    </main>
+    <footer>
+        <p>&copy; 2025 The Central <span class="s1">Hospital</span></p>
+    </footer>
+
+    <script>
+        const doctors = [
+            { name: "Dr. Emily White", department: "Cardiology", phone: "555-0101", email: "e.white@central.host", office: "A-102" },
+            { name: "Dr. John Smith", department: "Neurology", phone: "555-0102", email: "j.smith@central.host", office: "B-204" },
+            { name: "Dr. Sarah Lee", department: "Pediatrics", phone: "555-0103", email: "s.lee@central.host", office: "C-110" },
+            { name: "Dr. Michael Brown", department: "Dermatology", phone: "555-0104", email: "m.brown@central.host", office: "A-104" },
+            { name: "Dr. Lisa Chen", department: "Cardiology", phone: "555-0105", email: "l.chen@central.host", office: "A-108" },
+            { name: "Dr. Robert King", department: "Neurology", phone: "555-0106", email: "r.king@central.host", office: "B-208" },
+            { name: "Dr. Jennifer Tay", department: "Pediatrics", phone: "555-0107", email: "j.tay@central.host", office: "C-112" },
+            { name: "Dr. William Scott", department: "Dermatology", phone: "555-0108", email: "w.scott@central.host", office: "A-106" },
+            { name: "Dr. Mary Adams", department: "Orthopedics", phone: "555-0109", email: "m.adams@central.host", office: "D-301" }
+        ];
+
+        const searchButton = document.getElementById('SearchButton');
+        const searchBar = document.getElementById('SearchBar');
+        const resultsDiv = document.getElementById('SearchResults');
+
+        searchButton.addEventListener('click', performSearch);
+        searchBar.addEventListener('keyup', (e) => {
+            if (e.key === 'Enter') {
+                performSearch();
+            }
+        });
+
+        function performSearch() {
+            const searchTerm = searchBar.value.toLowerCase();
+            const searchType = document.querySelector('input[name="searchby"]:checked').value;
+            resultsDiv.innerHTML = '';
+
+            const filteredDoctors = doctors.filter(doctor => {
+                if (searchType === 'Name') {
+                    return doctor.name.toLowerCase().includes(searchTerm);
+                } else {
+                    return doctor.department.toLowerCase().includes(searchTerm);
+                }
+            });
+
+            if (filteredDoctors.length > 0) {
+                filteredDoctors.forEach(doctor => {
+                    const card = document.createElement('div');
+                    card.className = 'doctor-card';
+                    card.innerHTML = `
+                        <h3>${doctor.name}</h3>
+                        <p><strong>Department:</strong> ${doctor.department}</p>
+                        <p><strong>Office:</strong> ${doctor.office}</p>
+                        <p><strong>Phone:</strong> ${doctor.phone}</p>
+                        <p><strong>Email:</strong> ${doctor.email}</p>
+                    `;
+                    resultsDiv.appendChild(card);
+                });
+            } else {
+                resultsDiv.innerHTML = '<p>No doctors found matching your criteria.</p>';
+            }
+        }
+    </script>
+</body>
+</html>

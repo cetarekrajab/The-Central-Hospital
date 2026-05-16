@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>The Central Hospital - Our Services</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            background-color: #f4f7f9;
+        }
+        .div1 {
+            background-color: rgb(255, 255, 255);
+            width: 450px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 0;
+            left: 0;
+            position: fixed;
+            z-index: 10;
+        }
+        .head {
+            margin: 0;
+        }
+        .s1 {
+            color: rgb(0, 200, 255);
+        }
+        .div2 {
+            position: fixed;
+            left: 450px;
+            top: 0;
+            right: 0;
+            height: 80px;
+            background-color: rgb(0, 200, 255);
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+            overflow-x: auto;
+            z-index: 10;
+        }
+        .div2 button {
+            border: 0;
+            background-color: inherit;
+            color: white;
+            font-size: 14px;
+            font-weight: bold;
+            cursor: pointer;
+            padding: 10px 15px;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 20px;
+        }
+        .div2 button:hover {
+            background-color: rgba(255, 255, 255, 0.2);
+        }
+        .cta-button {
+            background-color: white !important;
+            color: rgb(0, 200, 255) !important;
+            font-weight: bold;
+        }
+        .cta-button:hover {
+            background-color: #f0f0f0 !important;
+        }
+        .div3 {
+            background-image: url("1.jpg");
+            position: relative;
+            top: 80px;
+            height: 600px;
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 100px;
+        }
+        .p4 { 
+            color: rgb(255, 255, 255);
+            font-size: 3.5em;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+        }
+        .p3 { 
+            color: rgb(255, 255, 255);
+            font-size: 1.5em;
+            width: 60%;
+            margin: 20px 0;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.6);
+        }
+        .b1 { 
+            border: 0;
+            background-color: rgb(0, 200, 255);
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+            font-weight: bold;
+            cursor: pointer;
+            white-space: nowrap;
+            transition: background-color 0.2s;
+            border-radius: 30px;
+            padding: 15px 35px;
+            align-self: flex-start;
+        }
+        
+        .emergency-section {
+            background-color: #d93025;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            margin-top: 80px;
+        }
+        .emergency-section h2 {
+            margin-top: 0;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+        .emergency-section .emergency-callout {
+            font-size: 1.5em;
+            font-weight: bold;
+            border: 2px solid white;
+            padding: 10px;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+        .emergency-section p {
+            font-size: 1.1em;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto 20px auto;
+        }
+        .emergency-section a {
+            color: white;
+            font-weight: bold;
+            text-decoration: underline;
+        }
+        .emergency-section .wait-time-link {
+            display: inline-block;
+            background-color: white;
+            color: #d93025;
+            padding: 12px 25px;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.2em;
+            margin-top: 10px;
+            transition: background-color 0.2s, color 0.2s;
+        }
+        .emergency-section .wait-time-link:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .patient-stories-section {
+            padding: 80px 20px;
+            text-align: center;
+            background-color: #ffffff;
+        }
+        .patient-stories-section h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 50px;
+        }
+        .stories-container {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .story-card {
+            background-color: #f4f7f9;
+            border: 1px solid #e0e0e0;
+            border-radius: 10px;
+            flex-basis: 300px;
+            padding: 30px;
+            text-align: left;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .story-card p {
+            font-style: italic;
+            color: #555;
+            line-height: 1.6;
+        }
+        .story-card .patient-name {
+            font-style: normal;
+            font-weight: bold;
+            text-align: right;
+            margin-top: 20px;
+            color: rgb(0, 200, 255);
+        }
+
+        .patients-visitors-section {
+            background-color: #eaf5ff;
+            padding: 80px 20px;
+        }
+        .patients-visitors-section h2 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 50px;
+            text-align: center;
+        }
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .info-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+        }
+        .info-card h3 {
+            font-size: 1.5em;
+            color: rgb(0, 200, 255);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+        .info-card p, .info-card ul {
+            color: #555;
+            line-height: 1.6;
+        }
+        .info-card ul {
+            padding-left: 20px;
+        }
+        
+        .div6 { 
+            background-color: white;
+            padding: 80px 20px;
+            text-align: center;
+            height: fit-content;
+        }
+        .h12 {
+            font-size: 2.8em;
+            color: #333;
+            margin-bottom: 40px;
+        }
+        .contact-section {
+            max-width: 850px;
+            margin: 0 auto;
+            text-align: left;
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.7;
+        }
+        .contact-section h3 {
+            font-size: 1.6em;
+            color: #333;
+            margin-top: 40px;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid rgb(0, 200, 255);
+        }
+        .contact-section p {
+            margin-bottom: 15px;
+        }
+        .contact-section strong {
+            color: #333;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px 0;
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="div1">
+            <h1 class="head">The Central <span class="s1">Hospital</span></h1>
+        </div>
+        <div class="div2">
+            <button type="button" onclick="location.href='Home.html'">Home</button>
+           <button type="button" onclick="location.href='FindADoctor.html'">Find a Doctor</button>
+           <button type="button" onclick="location.href='OurServices.html'">Our Services</button>
+           <button type="button" onclick="location.href='AboutUs.html'">About Us</button>
+           <button type="button" onclick="location.href='ContactUs.html'">Contact Us</button>
+           <button type="button" class="cta-button" onclick="location.href='BookAnAppointment.html'">Book an Appointment</button>
+        </div>
+    </header>
+    <main>
+        <div class="div3">
+            <h1 class="p4">Welcome to The Central Hospital</h1>
+            <p class="p3">
+                We combine advanced treatments with a compassionate approach to ensure you receive the best possible care. Find a specialist by name or explore the services we offer for your condition.
+            </p>
+            <button type="button" class="b1" onclick="location.href='FindADoctor.html'">Find a Doctor</button>
+        </div>
+
+        <div class="emergency-section">
+            <h2>Emergency (A&E) Information</h2>
+            <div class="emergency-callout">For a life-threatening emergency, call 999.</div>
+            <p>
+                Our A&E department is located at the <strong>Main Hospital Entrance, Ground Floor, West Wing</strong>. 
+                <a href="#">Get Directions Here</a>.
+            </p>
+            <a href="#" class="wait-time-link">View Live A&E Waiting Times</a>
+            <p style="margin-top: 20px;">
+                <strong>When should you visit A&E?</strong> A&E is for serious, life-threatening injuries and illnesses. For minor injuries or illnesses, please consider visiting an <a href="#">Urgent Treatment Centre</a> or contacting your <a href="#">GP</a> first.
+            </p>
+        </div>
+
+        <div class="div6">
+            <div class="contact-section">
+
+                <h3>Our Departments</h3>
+                <p>
+                    <a href="OurServices.html">Accident & Emergency (A&E)</a>, 
+                    <a href="OurServices.html">Acute Medicine / Acute Medical Unit (AMU)</a>, 
+                    <a href="OurServices.html">Anaesthetics</a>, 
+                    <a href="OurServices.html">Audiology</a>, 
+                    <a href="OurServices.html">Bereavement Services</a>, 
+                    <a href="OurServices.html">Cardiology</a>, 
+                    <a href="OurServices.html">Cardiothoracic Surgery</a>, 
+                    <a href="OurServices.html">Chaplaincy / Spiritual Care</a>, 
+                    <a href="OurServices.html">Child and Adolescent Mental Health Services (CAMHS)</a>, 
+                    <a href="OurServices.html">Clinical Genetics</a>, 
+                    <a href="OurServices.html">Dermatology</a>, 
+                    <a href="OurServices.html">Dietetics</a>, 
+                    <a href="OurServices.html">Endocrinology & Diabetes</a>, 
+                    <a href="OurServices.html">ENT (Ear, Nose and Throat) / Otolaryngology</a>, 
+                    <a href="OurServices.html">Gastroenterology</a>, 
+                    <a href="OurServices.html">General Internal Medicine</a>, 
+                    <a href="OurServices.html">General Surgery</a>, 
+                    <a href="OurServices.html">Genitourinary Medicine (GUM) / Sexual Health</a>, 
+                    <a href="OurServices.html">Geriatric Medicine / Care of the Elderly</a>, 
+                    <a href="OurServices.html">Gynaecology</a>, 
+                    <a href="OurServices.html">Haematology</a>, 
+                    <a href="OurServices.html">High Dependency Unit (HDU)</a>, 
+                    <a href="OurServices.html">Immunology & Allergy</a>, 
+                    <a href="OurServices.html">Infectious Diseases</a>, 
+                    <a href="OurServices.html">Intensive Care Unit (ICU) / Critical Care Unit (CCU)</a>, 
+                    <a href="OurServices.html">Maternity / Obstetrics</a>, 
+                    <a href="OurServices.html">Medical Imaging / Radiology</a>, 
+                    <a href="OurServices.html">Neonatal Unit / Special Care Baby Unit (SCBU)</a>, 
+                    <a href="OurServices.html">Nephrology</a>, 
+                    <a href="OurServices.html">Neurology</a>, 
+                    <a href="OurServices.html">Neurophysiology</a>, 
+                    <a href="OurServices.html">Neurosurgery</a>, 
+                    <a href="OurServices.html">Occupational Therapy (OT)</a>, 
+                    <a href="OurServices.html">Oncology</a>, 
+                    <a href="OurServices.html">Ophthalmology</a>, 
+                    <a href="OurServices.html">Oral and Maxillofacial Surgery</a>, 
+                    <a href="OurServices.html">Outpatients Department (OPD)</a>, 
+                    <a href="OurServices.html">Paediatric Surgery</a>, 
+                    <a href="OurServices.html">Paediatrics / Children's Services</a>, 
+                    <a href="OurServices.html">Palliative Care</a>, 
+                    <a href="OurServices.html">Pathology / Laboratory Medicine</a>, 
+                    <a href="OurServices.html">Patient Advice and Liaison Service (PALS)</a>, 
+                    <a href="OurServices.html">Pharmacy</a>, 
+                    <a href="OurServices.html">Phlebotomy</a>, 
+                    <a href="OurServices.html">Physiotherapy</a>, 
+                    <a href="OurServices.html">Plastic & Reconstructive Surgery</a>, 
+                    <a href="OurServices.html">Respiratory Medicine</a>, 
+                    <a href="OurServices.html">Rheumatology</a>, 
+                    <a href="OurServices.html">Speech and Language Therapy (SALT)</a>, 
+                    <a href="OurServices.html">Trauma & Orthopaedics</a>, 
+                    <a href="OurServices.html">Urgent Treatment Centre (UTC)</a>, 
+                    <a href="OurServices.html">Urology</a>, 
+                    <a href="OurServices.html">Vascular Surgery</a>, 
+                    <a href="OurServices.html">Voluntary Services</a>
+                </p>
+
+                <h3>Appointments and Referrals</h3>
+                <p>Ready to schedule your visit? Our team is ready to assist you in finding the right doctor and time for your needs.</p>
+                <p><strong>Appointment Scheduling Line:</strong> 01234 567890</p>
+                <p><strong>Online Booking:</strong> You can also Book an Appointment Online at your convenience.</p>
+
+            </div>
+        </div>
+
+        <div class="patient-stories-section">
+            <h2>Stories From Our Patients</h2>
+            <div class="stories-container">
+                <div class="story-card">
+                    <p>"The care my father received in the cardiology unit was second to none. The consultants were clear and compassionate, and the nursing staff were simply incredible. We felt supported every step of the way."</p>
+                    <div class="patient-name">- Sarah L.</div>
+                </div>
+                <div class="story-card">
+                    <p>"After my knee surgery, the physiotherapy team worked wonders. They were patient, encouraging, and highly professional. Thanks to them, I'm back on my feet and feeling better than ever. Thank you!"</p>
+                    <div class="patient-name">- John D.</div>
+                </div>
+                <div class="story-card">
+                    <p>"Having our first baby was a scary but wonderful experience, made all the better by the amazing team in the maternity ward. They provided expert care and reassurance when we needed it most."</p>
+                    <div class="patient-name">- Aisha & Tom P.</div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="patients-visitors-section">
+            <h2>For Patients & Visitors</h2>
+            <div class="info-grid">
+                <div class="info-card">
+                    <h3>Visiting Hours</h3>
+                    <p>Visiting times vary by ward to ensure our patients get the rest they need. Please check the specific times for the ward you are visiting. General hours are typically 2pm - 4pm and 6pm - 8pm.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Getting Here</h3>
+                    <p>We are located on Central Way, Anytown, AN1 2BH. We are easily accessible via the number 12 and 45 bus routes. On-site pay-and-display parking is available, with costs starting from £2.50 per hour.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Hospital Maps</h3>
+                    <p>Navigating the hospital can be tricky. We recommend downloading a map of the hospital site before your visit to easily find departments, wards, and facilities.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Facilities</h3>
+                    <p>We have a range of facilities on-site, including a cafe in the main atrium, a convenience shop, an outpatient pharmacy, and free Wi-Fi access for all patients and visitors.</p>
+                </div>
+                <div class="info-card">
+                    <h3>Accessibility</h3>
+                    <p>We are committed to being accessible to everyone. Disabled parking bays are located near all main entrances. We also offer patient transport services and wheelchair access throughout the hospital.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2025 The Central <span class="s1">Hospital</span></p>
+        </footer>
+    </main>
+</body>
+</html>
