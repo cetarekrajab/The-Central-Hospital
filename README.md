@@ -2,22 +2,23 @@
 
 ## Overview
 
-The Central Hospital is a full-stack hospital web portal developed to provide patients and visitors with an easy-to-use healthcare platform. The website includes hospital information pages, doctor search functionality, appointment booking, and contact forms integrated with a MySQL database.
+The Central Hospital is a full-stack hospital web portal developed using HTML, CSS, JavaScript, PHP, and MySQL. The project provides patients and visitors with an easy-to-use healthcare platform that includes hospital information, doctor search, appointment booking, and contact form functionality.
 
-This project demonstrates frontend and backend web development using HTML, CSS, JavaScript, PHP, and MySQL.
+The system demonstrates frontend and backend web development concepts along with database integration and dynamic client-side functionality.
 
 ---
 
 ## Features
 
-* Multi-page responsive hospital website
+* Multi-page hospital website
 * Doctor search by name or department
-* Dynamic appointment booking system
+* Appointment booking system
 * Contact and message forms
-* Secure PHP backend using prepared statements
-* MySQL database integration
-* Interactive frontend using JavaScript
-* Tailwind CSS-based appointment booking interface
+* PHP backend integration
+* MySQL database connectivity
+* Dynamic JavaScript functionality
+* Tailwind CSS appointment interface
+* Form validation and database storage
 
 ---
 
@@ -74,7 +75,7 @@ These files handle:
 
 Database Name:
 
-```sql id="d1h9r2"
+```sql id="v5l9ks"
 central_hospital
 ```
 
@@ -87,7 +88,7 @@ Main Tables:
 
 ## Project Structure
 
-```bash id="w2l6xn"
+```bash id="b4p7xr"
 The-Central-Hospital/
 │
 ├── README.md
@@ -120,20 +121,48 @@ The-Central-Hospital/
 
 ## How to Run the Project
 
-1. Install XAMPP
-2. Start Apache and MySQL
-3. Place the project folder inside:
+1. Install XAMPP on your system.
 
-```bash id="n8j4kp"
+2. Start both:
+
+* Apache
+* MySQL
+
+from the XAMPP Control Panel.
+
+3. Put all project files in the same folder inside:
+
+```bash id="s9x3mt"
 htdocs
 ```
 
-4. Import the SQL database using phpMyAdmin
-5. Open the project in your browser:
+Example:
 
-```bash id="a4s9tm"
+```bash id="j2w8qp"
+xampp/htdocs/The-Central-Hospital
+```
+
+4. Open phpMyAdmin and create a database named:
+
+```sql id="n6f1zd"
+central_hospital
+```
+
+5. Import the SQL database file into the database.
+
+6. Open your browser and run:
+
+```bash id="q3r7vl"
 http://localhost/The-Central-Hospital
 ```
+
+7. The website should now run locally with:
+
+* Doctor search
+* Appointment booking
+* Contact forms
+* PHP backend integration
+* MySQL database support
 
 ---
 
@@ -150,13 +179,13 @@ Users can search doctors by:
 
 * Multi-step booking interface
 * Dynamic time slot selection
-* Client-side validation
+* Form validation
 * Database storage
 
 ### Contact Form
 
 * Stores user messages in MySQL
-* Uses secure prepared statements
+* Uses PHP backend handling
 
 ---
 
@@ -165,7 +194,7 @@ Users can search doctors by:
 * Admin dashboard
 * Real-time appointment availability
 * User authentication system
-* Online patient profiles
+* Patient account management
 * External CSS refactoring
 * Email notification system
 
