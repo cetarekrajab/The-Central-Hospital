@@ -2,23 +2,22 @@
 
 ## Overview
 
-The Central Hospital is a full-stack hospital web portal developed using HTML, CSS, JavaScript, PHP, and MySQL. The project provides patients and visitors with an easy-to-use healthcare platform that includes hospital information, doctor search, appointment booking, and contact form functionality.
+The Central Hospital is a hospital web portal developed using HTML, CSS, JavaScript, PHP, and MySQL. The project provides users with hospital information, doctor search functionality, appointment booking, and contact form features through a simple and user-friendly interface.
 
-The system demonstrates frontend and backend web development concepts along with database integration and dynamic client-side functionality.
+The system combines frontend design with backend database integration using PHP and MySQL.
 
 ---
 
 ## Features
 
 * Multi-page hospital website
-* Doctor search by name or department
+* Doctor search functionality
 * Appointment booking system
 * Contact and message forms
 * PHP backend integration
 * MySQL database connectivity
 * Dynamic JavaScript functionality
-* Tailwind CSS appointment interface
-* Form validation and database storage
+* Background image integration
 
 ---
 
@@ -28,12 +27,11 @@ The system demonstrates frontend and backend web development concepts along with
 
 * HTML5
 * CSS3
-* JavaScript (ES6+)
-* Tailwind CSS
+* JavaScript
 
 ### Backend
 
-* PHP 8
+* PHP
 
 ### Database
 
@@ -61,34 +59,13 @@ The system demonstrates frontend and backend web development concepts along with
 
 * contact.php
 * book_appointment.php
-
-These files handle:
-
-* Contact form submissions
-* Appointment booking requests
-* Database communication
-* Data validation and insertion
-
----
-
-## Database Structure
-
-Database Name:
-
-```sql id="v5l9ks"
-central_hospital
-```
-
-Main Tables:
-
-* messages
-* appointments
+* test.php
 
 ---
 
 ## Project Structure
 
-```bash id="b4p7xr"
+```bash id="r7m2xt"
 The-Central-Hospital/
 │
 ├── README.md
@@ -105,12 +82,10 @@ The-Central-Hospital/
 │
 ├── contact.php
 ├── book_appointment.php
+├── test.php
 │
-├── database/
-│   ├── schema.sql
-│   └── insert_queries.sql
+├── images/
 │
-├── assets/
 ├── screenshots/
 │
 └── report/
@@ -123,7 +98,7 @@ The-Central-Hospital/
 
 1. Install XAMPP on your system.
 
-2. Start both:
+2. Start:
 
 * Apache
 * MySQL
@@ -132,71 +107,31 @@ from the XAMPP Control Panel.
 
 3. Put all project files in the same folder inside:
 
-```bash id="s9x3mt"
+```bash id="v4k9sz"
 htdocs
 ```
 
 Example:
 
-```bash id="j2w8qp"
+```bash id="p6x1qn"
 xampp/htdocs/The-Central-Hospital
 ```
 
-4. Open phpMyAdmin and create a database named:
+4. Open your browser and run:
 
-```sql id="n6f1zd"
-central_hospital
-```
-
-5. Import the SQL database file into the database.
-
-6. Open your browser and run:
-
-```bash id="q3r7vl"
+```bash id="t8w3mf"
 http://localhost/The-Central-Hospital
 ```
-
-7. The website should now run locally with:
-
-* Doctor search
-* Appointment booking
-* Contact forms
-* PHP backend integration
-* MySQL database support
-
----
-
-## Key Functionalities
-
-### Doctor Search
-
-Users can search doctors by:
-
-* Name
-* Department
-
-### Appointment Booking
-
-* Multi-step booking interface
-* Dynamic time slot selection
-* Form validation
-* Database storage
-
-### Contact Form
-
-* Stores user messages in MySQL
-* Uses PHP backend handling
 
 ---
 
 ## Future Improvements
 
 * Admin dashboard
+* User authentication
 * Real-time appointment availability
-* User authentication system
-* Patient account management
-* External CSS refactoring
-* Email notification system
+* Improved UI/UX
+* External CSS styling
 
 ---
 
